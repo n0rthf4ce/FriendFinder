@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <title>FriendFinder</title>
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="friendModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="friendModal">Best Match</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="bestFriendInfo">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>About You</h2>
+        <form id="submitNewPerson" class="needs-validation" novalidate>
+            <div class="form-row">
+                <label for="userName">Name (Required)</label>
+                <input type="text" class="form-control" id="userName" placeholder="Name" required>
+                <div class="invalid-feedback">
+                    Please enter your name.
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="userPhotoURL">Link to Photo Image (Required)</label>
+                <input type="text" class="form-control" id="userPhotoURL" placeholder="www..." required>
+                <div class="invalid-feedback">
+                    Please provide a URL to your image.
+                </div>
+            </div>
+            <hr>
+            <h2>Survey Questions</h2>
+            <div class="form-row" style="max-width:170px">
+                <label for="q1">I love my chickens</label>
+                <select class="custom-select" id="q1" required>
+                    <option value="" selected>Select an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option
+                </div>
+            </div>
+            <div class="form-row" style="max-width:170px">
+                <label for="q2">I like dogs</label>
+                <select class="custom-select" id="q2" required>
+                    <option value="" selected>Select an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option
+                </div>
+            </div>
+            <div class="form-row" style="max-width:170px">
+                <label for="q3">I like the beach</label>
+                <select class="custom-select" id="q3" required>
+                    <option value="" selected>Select an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option
+                </div>
+            </div>
+            <div class="form-row" style="max-width:170px">
+                <label for="q4">I like the sky</label>
+                <select class="custom-select" id="q4" required>
+                    <option value="" selected>Select an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option
+                </div>
+            </div>
+            <div class="form-row" style="max-width:170px">
+                <label for="q5">I like dogs</label>
+                <select class="custom-select" id="q5" required>
+                    <option value="" selected>Select an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option
+                </div>
+            </div>
+            <div class="form-row" style="max-width:170px">
+                <label for="q6">I like cars</label>
+                <select class="custom-select" id="q6" required>
+                    <option value="" selected>Select an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option
+                </div>
+            </div>
+
+            <div class="form-row" style="max-width:170px">
+                <label for="q7">I like birds</label>
+                <select class="custom-select" id="q7" required>
+                    <option value="" selected>Select an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option
+                </div>
+            </div>
+
+            <div class="form-row" style="max-width:170px">
+                <label for="q8">I like cows</label>
+                <select class="custom-select" id="q8" required>
+                    <option value="" selected>Select an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option
+                </div>
+            </div>
+
+            <div class="form-row" style="max-width:170px">
+                <label for="q9">I like chickens</label>
+                <select class="custom-select" id="q9" required>
+                    <option value="" selected>Select an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option
+                </div>
+            </div>
+
+            <div class="form-row" style="max-width:170px">
+                <label for="q10">I like ducks</label>
+                <select class="custom-select" id="q10" required>
+                    <option value="" selected>Select an Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select an option
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#friendModal">Submit form</button>
+        </form>
+        <a href="/api/friends">API Friends List</a><br>
+        <a href="https://github.com/n0rthf4ce/FriendFinder">Github Repo</a>
+    </div>
+    <!-- Optional JavaScript -->
+    <script src="../javascript/validation.js"></script>
+    <script src="../javascript/submit.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
