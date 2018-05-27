@@ -5,19 +5,25 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+
     <title>FriendFinder</title>
 </head>
 
 <body>
     <!-- Modal -->
-    <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="friendModal" aria-hidden="true">
+    <div class="modal fade" id="friendModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -30,32 +36,25 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
         <h2>About You</h2>
-        <form id="submitNewPerson" class="needs-validation" novalidate>
+        <form id="submitNewPerson">
             <div class="form-row">
                 <label for="userName">Name (Required)</label>
                 <input type="text" class="form-control" id="userName" placeholder="Name" required>
-                <div class="invalid-feedback">
-                    Please enter your name.
-                </div>
             </div>
             <div class="form-row">
                 <label for="userPhotoURL">Link to Photo Image (Required)</label>
                 <input type="text" class="form-control" id="userPhotoURL" placeholder="www..." required>
-                <div class="invalid-feedback">
-                    Please provide a URL to your image.
-                </div>
             </div>
             <hr>
             <h2>Survey Questions</h2>
-            <div class="form-row" style="max-width:170px">
-                <label for="q1">I love my chickens</label>
+            <div class="form-row">
+                <label for="q1">I love long walks on the beach</label>
                 <select class="custom-select" id="q1" required>
                     <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -64,12 +63,9 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <div class="invalid-feedback">
-                    Please select an option
-                </div>
             </div>
-            <div class="form-row" style="max-width:170px">
-                <label for="q2">I like dogs</label>
+            <div class="form-row">
+                <label for="q2">A day of hiking followed by a relaxing day in the hot tub sounds like a great date</label>
                 <select class="custom-select" id="q2" required>
                     <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -78,12 +74,9 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <div class="invalid-feedback">
-                    Please select an option
-                </div>
             </div>
-            <div class="form-row" style="max-width:170px">
-                <label for="q3">I like the beach</label>
+            <div class="form-row">
+                <label for="q3">I love to dress formally and attend formal events</label>
                 <select class="custom-select" id="q3" required>
                     <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -92,12 +85,9 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <div class="invalid-feedback">
-                    Please select an option
-                </div>
             </div>
-            <div class="form-row" style="max-width:170px">
-                <label for="q4">I like the sky</label>
+            <div class="form-row">
+                <label for="q4">I'd rather stay home and watch a movie than go to the club</label>
                 <select class="custom-select" id="q4" required>
                     <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -106,12 +96,9 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <div class="invalid-feedback">
-                    Please select an option
-                </div>
             </div>
-            <div class="form-row" style="max-width:170px">
-                <label for="q5">I like dogs</label>
+            <div class="form-row">
+                <label for="q5">I love pets! Dogs, cats, monkeys, you name it!</label>
                 <select class="custom-select" id="q5" required>
                     <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -120,12 +107,9 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <div class="invalid-feedback">
-                    Please select an option
-                </div>
             </div>
-            <div class="form-row" style="max-width:170px">
-                <label for="q6">I like cars</label>
+            <div class="form-row">
+                <label for="q6">I like traveling to new places and meeting new people</label>
                 <select class="custom-select" id="q6" required>
                     <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -134,13 +118,10 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <div class="invalid-feedback">
-                    Please select an option
-                </div>
             </div>
 
-            <div class="form-row" style="max-width:170px">
-                <label for="q7">I like birds</label>
+            <div class="form-row">
+                <label for="q7">I love being with large groups of people</label>
                 <select class="custom-select" id="q7" required>
                     <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -149,13 +130,10 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <div class="invalid-feedback">
-                    Please select an option
-                </div>
             </div>
 
-            <div class="form-row" style="max-width:170px">
-                <label for="q8">I like cows</label>
+            <div class="form-row">
+                <label for="q8">I constantly seek adventure, and am frequently impulsive</label>
                 <select class="custom-select" id="q8" required>
                     <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -164,13 +142,10 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <div class="invalid-feedback">
-                    Please select an option
-                </div>
             </div>
 
-            <div class="form-row" style="max-width:170px">
-                <label for="q9">I like chickens</label>
+            <div class="form-row">
+                <label for="q9">I love discovering new restaurants and trying new foods</label>
                 <select class="custom-select" id="q9" required>
                     <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -179,13 +154,10 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <div class="invalid-feedback">
-                    Please select an option
-                </div>
             </div>
 
-            <div class="form-row" style="max-width:170px">
-                <label for="q10">I like ducks</label>
+            <div class="form-row">
+                <label for="q10">I enjoy a quiet night in with 1 to 2 close friends</label>
                 <select class="custom-select" id="q10" required>
                     <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -194,17 +166,14 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
-                <div class="invalid-feedback">
-                    Please select an option
-                </div>
             </div>
-            <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#friendModal">Submit form</button>
+            <button class="btn btn-primary" type="submit">Submit form</button>
         </form>
-        <a href="/api/friends">API Friends List</a><br>
+        <a href="/api/friends">API Friends List</a>
+        <br>
         <a href="https://github.com/n0rthf4ce/FriendFinder">Github Repo</a>
     </div>
     <!-- Optional JavaScript -->
-    <script src="../javascript/validation.js"></script>
     <script src="../javascript/submit.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -213,6 +182,8 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-</body>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+
+    </body>
 
 </html>

@@ -25,5 +25,6 @@ $(document).ready(function () {
                 $("#userPhotoURL").val("");
             }
         );
+        $("#friendModal").modal("show");
     });
 });
