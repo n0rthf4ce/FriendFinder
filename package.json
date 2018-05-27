@@ -1,5 +1,5 @@
 {
-  "name": "FriendFinder",
+  "name": "friendfinder",
   "version": "1.0.0",
   "description": "Find a the closest match within our database",
   "main": "server.js",
@@ -21,9 +21,5 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3"
-  },
-  "scripts": {
-    "start": "node server.js"
   }
- 
 }
