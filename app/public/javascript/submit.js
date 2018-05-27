@@ -19,7 +19,7 @@ $(document).ready(function () {
             function (data) {
                 if (data) {
                     console.log(data);
-                    $("#bestFriendInfo").html(`<h3>${data.name}</h3><img src=${data.url} alt="no image">`)
+                    $("#bestFriendInfo").html(`<h3>${data.name}</h3><img src=${data.url} alt="no image" style=max-width:100%>`)
                 }
                 $("#userName").val("");
                 $("#userPhotoURL").val("");
